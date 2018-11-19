@@ -18,7 +18,7 @@ async def daily_check(bot):
         # calculate which people to add/remove
         guild = bot.get_guild(config.server_id)
         role = utils.misc.get_role(guild)
-        if not guild.get_member(bot.id).guild_permissions.manage_roles:
+        if not guild.get_member(bot.user.id).guild_permissions.manage_roles:
             print('ERROR: No permissions to manage roles. Aborting daily check.')
             continue
 
